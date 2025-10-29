@@ -6,9 +6,11 @@ import math
 f1 = lambda x: math.sin(x)
 f2 = lambda x: math.sqrt(x) - 1
 
+
 def test_bisection():
     assert root.bisection(f1, 2, 4, 2e-8, 10_000) == pytest.approx(math.pi)
     assert root.bisection(f2, 0, 2, 2e-8, 10_000) == pytest.approx(1)
+
 
 def test_secant():
     assert root.secant(f1, 2, 4, 2e-8, 10_000) == pytest.approx(math.pi)
