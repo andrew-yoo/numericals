@@ -1,4 +1,4 @@
-def bisection(function, alpha, beta, tolerance=10 * -10, max_iterations=10_000):
+def bisection(function, alpha, beta, tolerance=1e-10, max_iterations=10_000):
     if function(alpha) == 0:
         return alpha
     if function(beta) == 0:
@@ -19,7 +19,7 @@ def bisection(function, alpha, beta, tolerance=10 * -10, max_iterations=10_000):
     return (alpha + beta) * 0.5
 
 
-def secant(function, x0, x1, tolerance, max_iterations):
+def secant(function, x0, x1, tolerance=1e-10, max_iterations=10_000):
     for _ in range(max_iterations):
         x2 = x1 - function(x1) * (x1 - x0) / (function(x1) - function(x0))
 
