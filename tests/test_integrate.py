@@ -10,18 +10,18 @@ f3 = lambda x: -math.log(x)
 
 
 def test_trapezoidal():
-    assert integrate.trapezoidal(f1, 0, 1, 10_000) == pytest.approx(1 / 3, abs=1e-2)
+    assert integrate.trapezoidal(f1, 0, 1, 10_000) == pytest.approx(1 / 3, abs=1e-4)
     assert integrate.trapezoidal(f2, 0, 1, 10_000) == pytest.approx(
-        2 / math.pi, abs=1e-2
+        2 / math.pi, abs=1e-4
     )
     with pytest.raises(ValueError):
         integrate.trapezoidal(f3, 0, 1, 10_000)
 
 
 def test_midpoint():
-    assert integrate.midpoint(f1, 0, 1, 10_000) == pytest.approx(1 / 3, abs=1e-2)
-    assert integrate.midpoint(f2, 0, 1, 10_000) == pytest.approx(2 / math.pi, abs=1e-2)
-    assert integrate.midpoint(f3, 0, 1, 10_000) == pytest.approx(1, abs=1e-2)
+    assert integrate.midpoint(f1, 0, 1, 10_000) == pytest.approx(1 / 3, abs=1e-4)
+    assert integrate.midpoint(f2, 0, 1, 10_000) == pytest.approx(2 / math.pi, abs=1e-4)
+    assert integrate.midpoint(f3, 0, 1, 10_000) == pytest.approx(1, abs=1e-4)
 
 
 def test_monte_carlo():
