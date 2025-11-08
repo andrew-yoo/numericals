@@ -3,3 +3,7 @@
 __pycache__/
 
 *.log
+
+numericals.egg-info/
+
+auth.toml
