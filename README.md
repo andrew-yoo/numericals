@@ -11,6 +11,7 @@ Still very much in development.
 - Integration
     - Trapezoidal Rule
     - Midpoint Rule
+    - Simpson's Rule
     - Monte Carlo
 
 - ODE
