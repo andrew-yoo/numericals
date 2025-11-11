@@ -13,6 +13,7 @@ Still very much in development.
     - Midpoint Rule
     - Simpson's Rule
     - Monte Carlo
+    - Gaussian Quadrature
 
 - ODE
     - Euler's Method
