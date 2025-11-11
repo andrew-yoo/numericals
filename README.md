@@ -5,8 +5,23 @@ Numerical methods in pure Python.
 Still very much in development.
 
 ## Installation
+```pip install numericals```
 
-## Usage
+## Algorithms
+- Integration
+    - Trapezoidal Rule
+    - Midpoint Rule
+    - Monte Carlo
+
+- ODE
+    - Euler's Method
+
+- Optimization
+    - Golden Section Search
+
+- Root-finding
+    - Bisection Method
+    - Secant Method
 
 ## License
 
