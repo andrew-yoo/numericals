@@ -17,17 +17,6 @@ def midpoint(function, alpha, beta, n=10_000):
     return delta * sum
 
 
-def monte_carlo(function, alpha, beta, n=10_000):
-    width = beta - alpha
-    total = 0
-    for _ in range(n):
-        r = random.random()
-        x = alpha + r * width
-        total += function(x)
-    average = total / n
-    return average * width
-
-
 def simpson(function, alpha, beta, n=10_000):
     h = (beta - alpha) / n
     sum = function(alpha) + function(beta)
@@ -39,3 +28,14 @@ def simpson(function, alpha, beta, n=10_000):
         sum += 2 * function(alpha + i * h)
 
     return sum * (h / 3)
+
+
+def monte_carlo(function, alpha, beta, n=10_000):
+    width = beta - alpha
+    total = 0
+    for _ in range(n):
+        r = random.random()
+        x = alpha + r * width
+        total += function(x)
+    average = total / n
+    return average * width
