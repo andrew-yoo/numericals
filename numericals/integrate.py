@@ -1,4 +1,5 @@
 import random
+import math
 
 
 def trapezoidal(function, alpha, beta, n=10_000):
@@ -17,6 +18,19 @@ def midpoint(function, alpha, beta, n=10_000):
     return delta * sum
 
 
+def simpson(function, alpha, beta, n=10_000):
+    h = (beta - alpha) / n
+    sum = function(alpha) + function(beta)
+
+    for i in range(1, n, 2):
+        sum += 4 * function(alpha + i * h)
+
+    for i in range(2, n - 1, 2):
+        sum += 2 * function(alpha + i * h)
+
+    return sum * (h / 3)
+
+
 def monte_carlo(function, alpha, beta, n=10_000):
     width = beta - alpha
     total = 0
@@ -26,3 +40,27 @@ def monte_carlo(function, alpha, beta, n=10_000):
         total += function(x)
     average = total / n
     return average * width
+
+
+def gaussian(function, alpha, beta, order):
+    if not order in (2, 3):
+        raise ValueError
+
+    transform = lambda x: ((beta - alpha) * x + alpha + beta) * 0.5
+    w = (beta - alpha) * 0.5
+
+    if order == 2:
+        x1 = transform(-math.sqrt(1 / 3))
+        x2 = transform(math.sqrt(1 / 3))
+        w = (beta - alpha) * 0.5
+
+        return w * (function(x1) + function(x2))
+
+    else:  # Order must be 3
+        x1 = transform(-math.sqrt(3 / 5))
+        x2 = transform(0)
+        x3 = transform(math.sqrt(3 / 5))
+        w1 = 5 / 9
+        w2 = 8 / 9
+
+        return w * (w1 * function(x1) + w2 * function(x2) + w1 * function(x3))
