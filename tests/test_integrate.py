@@ -31,3 +31,10 @@ def test_monte_carlo():
         2 / math.pi, abs=1e-2
     )
     assert integrate.monte_carlo(f3, 0, 1, 10_000) == pytest.approx(1, abs=1e-2)
+
+
+def test_simpson():
+    assert integrate.simpson(f1, 0, 1, 10_000) == pytest.approx(1 / 3, abs=1e-4)
+    assert integrate.simpson(f2, 0, 1, 10_000) == pytest.approx(2 / math.pi, abs=1e-4)
+    with pytest.raises(ValueError):
+        integrate.simpson(f3, 0, 1, 10_000)
