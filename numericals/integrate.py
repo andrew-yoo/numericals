@@ -1,8 +1,20 @@
 import random
 import math
+from typing import Callable
 
 
-def trapezoidal(function, alpha, beta, n=10_000):
+def trapezoidal(function: Callable[[float], float], alpha: float, beta: float, n: int=10_000) -> float:
+    """Numerically integrate a function using the Trapezoidal Rule.
+
+    Args:
+        function: The function.
+        alpha: The lower limit.
+        beta: The upper limit.
+        n: The number of partitions.
+    
+    Returns:
+        An integral approximation.
+    """
     delta = (beta - alpha) / n
     sum = 0.5 * (function(alpha) + function(beta))
     for i in range(1, n):
@@ -10,7 +22,18 @@ def trapezoidal(function, alpha, beta, n=10_000):
     return delta * sum
 
 
-def midpoint(function, alpha, beta, n=10_000):
+def midpoint(function: Callable[[float], float], alpha: float, beta: float, n: int=10_000):
+    """Numerically integrate a function using the Midpoint Method.
+
+    Args:
+        function: The function.
+        alpha: The lower limit.
+        beta: The upper limit.
+        n: The number of partitions.
+    
+    Returns:
+        An integral approximation.
+    """
     delta = (beta - alpha) / n
     sum = 0
     for i in range(n):
@@ -18,7 +41,18 @@ def midpoint(function, alpha, beta, n=10_000):
     return delta * sum
 
 
-def simpson(function, alpha, beta, n=10_000):
+def simpson(function: Callable[[float], float], alpha: float, beta: float, n: int=10_000):
+    """Numerically integrate a function using Simpson's Rule.
+
+    Args:
+        function: The function.
+        alpha: The lower limit.
+        beta: The upper limit.
+        n: The number of partitions.
+    
+    Returns:
+        An integral approximation.
+    """
     h = (beta - alpha) / n
     sum = function(alpha) + function(beta)
 
@@ -31,7 +65,18 @@ def simpson(function, alpha, beta, n=10_000):
     return sum * (h / 3)
 
 
-def monte_carlo(function, alpha, beta, n=10_000):
+def monte_carlo(function: Callable[[float], float], alpha: float, beta: float, n: int=10_000):
+    """Numerically integrate a function using Monte Carlo Integration.
+
+    Args:
+        function: The function.
+        alpha: The lower limit.
+        beta: The upper limit.
+        n: The number of random samples.
+    
+    Returns:
+        An integral approximation.
+    """
     width = beta - alpha
     total = 0
     for _ in range(n):
@@ -42,7 +87,18 @@ def monte_carlo(function, alpha, beta, n=10_000):
     return average * width
 
 
-def gaussian(function, alpha, beta, order):
+def gaussian(function: Callable[[float], float], alpha: float, beta: float, order: int):
+    """Numerically integrate a function using Gaussian Quadrature.
+
+    Args:
+        function: The function.
+        alpha: The lower limit.
+        beta: The upper limit.
+        order: The order of the quadrature (i.e., the number of points used).
+    
+    Returns:
+        An integral approximation.
+    """
     if not order in (2, 3):
         raise ValueError
 
