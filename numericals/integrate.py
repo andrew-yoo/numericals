@@ -99,7 +99,7 @@ def monte_carlo(
 
     Parameters
     ----------
-    function : Callable 
+    function : Callable
         The function.
     alpha : float
         The lower limit.
@@ -123,7 +123,9 @@ def monte_carlo(
     return average * width
 
 
-def gaussian(function: Callable[[float], float], alpha: float, beta: float, order: int) -> float:
+def gaussian(
+    function: Callable[[float], float], alpha: float, beta: float, order: int
+) -> float:
     """Numerically integrate a function using Gaussian Quadrature.
 
     Parameters

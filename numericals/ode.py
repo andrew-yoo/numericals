@@ -1,7 +1,9 @@
 from collections.abc import Callable
 
 
-def euler(function: Callable[[float], float], alpha: float, beta: float, y0: float, n: int) -> list:
+def euler(
+    function: Callable[[float], float], alpha: float, beta: float, y0: float, n: int
+) -> list:
     """Solve ODE using Euler's Method.
 
     Parameters
