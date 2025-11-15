@@ -8,7 +8,7 @@ def golden(
     beta: float,
     tolerance: float = 1e-10,
     max_iterations: int = 10_000,
-):
+) -> tuple:
     """Find local minimum using the Golden Section Search.
 
     Parameters

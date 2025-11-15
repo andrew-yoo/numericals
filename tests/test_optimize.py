@@ -1,8 +1,6 @@
 import pytest
 from numericals import optimize
 
-import math
-
 f1 = lambda x: (x - 1) ** 2
 f2 = lambda x: 0.5 * x**3 + x**2
 f3 = lambda x: abs(x)

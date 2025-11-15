@@ -26,6 +26,7 @@ In active development.
 
 - ODE
     - Euler's Method
+    - Heun's Method
 
 - Optimization
     - Golden Section Search
