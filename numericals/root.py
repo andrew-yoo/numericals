@@ -85,3 +85,40 @@ def secant(
             return x2
 
     return x2
+
+
+def newton(
+    function: Callable[[float], float],
+    derivative: Callable[[float], float],
+    x0: float,
+    tolerance: float = 1e-10,
+    max_iterations: int = 10_000,
+) -> float:
+    """Find root using Newton's Method (also known as the Newton-Raphson Method).
+
+    Parameters
+    ----------
+    function : Callable
+        The function.
+    derivative : Callable
+        The function's first derivative.
+    x0 : float
+        The initial guess.
+    tolerance : float
+        The tolerance.
+    max_iterations : int
+        The maximum number of iterations.
+
+    Returns
+    -------
+        A root approximation.
+    """
+    for _ in range(max_iterations):
+        x1 = x0 - function(x0) / derivative(x0)
+
+        if abs(x0 - x1) < tolerance:
+            return x1
+
+        x0 = x1
+
+    return x1
