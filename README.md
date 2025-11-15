@@ -33,6 +33,8 @@ In active development.
 - Root-finding
     - Bisection Method
     - Secant Method
+    - Newton's Method
+    - Regula Falsi
 
 ## License
 

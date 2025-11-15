@@ -122,3 +122,28 @@ def newton(
         x0 = x1
 
     return x1
+
+
+def regula_falsi(
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    tolerance: float = 1e-10,
+    max_iterations: int = 10_000,
+) -> float:
+    """Find root using the Regula Falsi Method (also known as the False Position Method)."""
+
+    a, b = alpha, beta
+
+    for _ in range(max_iterations):
+        c = (a * function(b) - b * function(a)) / (function(b) - function(a))
+
+        if abs(function(c)) < tolerance:
+            break
+
+        if function(c) * function(a) > 0:
+            a = c
+        else:
+            b = c
+
+    return c
