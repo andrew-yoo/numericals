@@ -35,6 +35,7 @@ In active development.
     - Secant Method
     - Newton's Method
     - Regula Falsi
+    - Illinois Algorithm
 
 ## License
 

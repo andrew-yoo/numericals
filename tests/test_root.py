@@ -30,3 +30,8 @@ def test_regula_falsi():
         math.pi, abs=1e-8
     )
     assert root.regula_falsi(f2, 0, 2, 1e-10, 10_000) == pytest.approx(1, abs=1e-8)
+
+
+def test_illinois():
+    assert root.illinois(f1, 2, 4, 1e-10, 10_000) == pytest.approx(math.pi, abs=1e-8)
+    assert root.illinois(f2, 0, 2, 1e-10, 10_000) == pytest.approx(1, abs=1e-8)
