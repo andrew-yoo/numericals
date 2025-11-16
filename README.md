@@ -27,6 +27,7 @@ In active development.
 - ODE
     - Euler's Method
     - Heun's Method
+    - Runge-Kutta 4
 
 - Optimization
     - Golden Section Search

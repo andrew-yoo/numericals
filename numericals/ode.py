@@ -80,7 +80,25 @@ def heun(
 
 
 def rk4(function: Callable[[float], float], alpha: float, beta: float, y0: float, n: int) -> list:
-    """
+    """Solve ODE initial value problem using Runge-Kutta 4.
+
+    Parameters
+    ----------
+    function : Callable
+        The function.
+    alpha : float
+        The lower bound.
+    beta : float
+        The upper bound.
+    y0 : float
+        The initial value.
+    n : int
+        The number of partitions.
+
+    Returns
+    -------
+    list
+        A function approximation.
     """
     values = []
     h = (beta - alpha) / n
