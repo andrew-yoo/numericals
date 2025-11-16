@@ -70,10 +70,33 @@ def heun(
     for _ in range(n):
         y_predictor = y + h * function(x, y)
 
-        y = y + (h / 2) * (function(x, y) + function(x + h, y_predictor))
+        y += (h / 2) * (function(x, y) + function(x + h, y_predictor))
 
         x += h
 
         values.append((x, y))
 
+    return values
+
+
+def rk4(function: Callable[[float], float], alpha: float, beta: float, y0: float, n: int) -> list:
+    """
+    """
+    values = []
+    h = (beta - alpha) / n
+    x = alpha
+    y = y0
+    values.append((x, y))
+
+    for _ in range(n):
+        k1 = function(x,y)
+        k2 = function(x + h / 2, y + h * (k1 / 2))
+        k3 = function(x + h / 2, y + h * (k2 / 2))
+        k4 = function(x + h, y + h * k3)
+
+        y += (h / 6) * (k1 + 2 * k2 + 2 * k3 + k4)
+        x += h
+
+        values.append((x,y))
+    
     return values
