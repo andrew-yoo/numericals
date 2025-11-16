@@ -26,6 +26,8 @@ In active development.
 
 - ODE
     - Euler's Method
+    - Heun's Method
+    - Runge-Kutta 4
 
 - Optimization
     - Golden Section Search
@@ -33,6 +35,9 @@ In active development.
 - Root-finding
     - Bisection Method
     - Secant Method
+    - Newton's Method
+    - Regula Falsi
+    - Illinois Algorithm
 
 ## License
 
