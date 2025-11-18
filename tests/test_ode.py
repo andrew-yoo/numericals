@@ -7,7 +7,6 @@ f1 = lambda x, y: y
 
 
 def test_euler():
-
     f1_euler = ode.euler(f1, 0, 1, 1, 10_000)
 
     assert f1_euler[0] == pytest.approx((0, 1), abs=1e-3)
@@ -15,7 +14,6 @@ def test_euler():
 
 
 def test_heun():
-
     f1_heun = ode.heun(f1, 0, 1, 1, 10_000)
 
     assert f1_heun[0] == pytest.approx((0, 1), abs=1e-3)
@@ -23,7 +21,6 @@ def test_heun():
 
 
 def test_rk4():
-
     f1_rk4 = ode.rk4(f1, 0, 1, 1, 10_000)
 
     assert f1_rk4[0] == pytest.approx((0, 1), abs=1e-3)

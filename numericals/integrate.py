@@ -4,7 +4,10 @@ from collections.abc import Callable
 
 
 def trapezoidal(
-    function: Callable[[float], float], alpha: float, beta: float, n: int = 10_000
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    n: int = 10_000,
 ) -> float:
     """Numerically integrate a function using the Trapezoidal Rule.
 
@@ -32,7 +35,10 @@ def trapezoidal(
 
 
 def midpoint(
-    function: Callable[[float], float], alpha: float, beta: float, n: int = 10_000
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    n: int = 10_000,
 ) -> float:
     """Numerically integrate a function using the Midpoint Method.
 
@@ -60,7 +66,10 @@ def midpoint(
 
 
 def simpson(
-    function: Callable[[float], float], alpha: float, beta: float, n: int = 10_000
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    n: int = 10_000,
 ) -> float:
     """Numerically integrate a function using Simpson's Rule.
 
@@ -93,7 +102,10 @@ def simpson(
 
 
 def monte_carlo(
-    function: Callable[[float], float], alpha: float, beta: float, n: int = 10_000
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    n: int = 10_000,
 ) -> float:
     """Numerically integrate a function using Monte Carlo Integration.
 
@@ -124,7 +136,10 @@ def monte_carlo(
 
 
 def gaussian(
-    function: Callable[[float], float], alpha: float, beta: float, order: int
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    order: int,
 ) -> float:
     """Numerically integrate a function using Gaussian Quadrature.
 
