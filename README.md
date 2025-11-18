@@ -1,10 +1,9 @@
 # Numericals
 
-<div align="center">
-    <a href="https://badge.fury.io/py/numericals"><img src="https://badge.fury.io/py/numericals.svg" alt="PyPI version"></a>
-    <a href="https://pepy.tech/projects/numericals"><img src="https://static.pepy.tech/personalized-badge/numericals?period=total&units=INTERNATIONAL_SYSTEM&left_color=GREY&right_color=BLUE&left_text=downloads" alt="PyPI Downloads"></a>
-    <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-</div>
+[![PyPI version](https://badge.fury.io/py/numericals.svg)](https://badge.fury.io/py/numericals)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/numericals?period=total&units=NONE&left_color=GRAY&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/numericals)
+[![license](https://img.shields.io/pypi/l/numericals.svg)](https://github.com/andrew-yoo/numericals/blob/main/LICENSE)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 
 -----

@@ -2,7 +2,11 @@ from collections.abc import Callable
 
 
 def euler(
-    function: Callable[[float], float], alpha: float, beta: float, y0: float, n: int
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    y0: float,
+    n: int,
 ) -> list:
     """Solve ODE initial value problem using Euler's Method.
 
@@ -39,7 +43,11 @@ def euler(
 
 
 def heun(
-    function: Callable[[float], float], alpha: float, beta: float, y0: float, n: int
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    y0: float,
+    n: int,
 ) -> list:
     """Solve ODE initial value problem using Heun's Method.
 
@@ -80,7 +88,11 @@ def heun(
 
 
 def rk4(
-    function: Callable[[float], float], alpha: float, beta: float, y0: float, n: int
+    function: Callable[[float], float],
+    alpha: float,
+    beta: float,
+    y0: float,
+    n: int,
 ) -> list:
     """Solve ODE initial value problem using Runge-Kutta 4.
 
