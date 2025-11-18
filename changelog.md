@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1 - 2025-11-18
+
+Henceforth switching to Ruff.
+
+### Changed
+
+- Reformat function arguments to vertical
+- Edit README.md Badges
+
 ## 0.3.0 - 2025-11-15
 
 ### Added
