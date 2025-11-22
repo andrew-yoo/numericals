@@ -4,6 +4,6 @@ __pycache__/
 
 *.log
 
-numericals.egg-info/
+*.egg-info/
 
-auth.toml
+auth.txt

@@ -10,7 +10,7 @@
 
 Numerical methods in pure Python.
 
-In active development.
+[Documentation](docs/docs.md) is available, but it might be easier to just read the code.
 
 ## Installation
 ```pip install numericals```
