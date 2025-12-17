@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4 - 2025-12-16
+
+### Changed
+
+- Added imports in ```__init__.py``` file. Hopefully everything works.
+
 ## 0.3.3 - 2025-12-16
 
 ### Changed
