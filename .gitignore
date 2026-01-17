@@ -1,9 +1,16 @@
+# Python stuff
+
 *.pyc
 *.pyo
 __pycache__/
 
-*.log
 
+# Whatever this is
+*.log
 *.egg-info/
 
+
+# Secret stuff
+
 auth.txt
+stuff/

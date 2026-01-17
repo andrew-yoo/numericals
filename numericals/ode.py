@@ -28,18 +28,23 @@ def euler(
     list
         A function approximation.
     """
-    values = []
+    x_values, y_values = [], []
+
     h = (beta - alpha) / n
     x = alpha
     y = y0
-    values.append((x, y))
 
-    for _ in range(n):
+    x_values.append(x)
+    y_values.append(y)
+
+    for _ in range(1, n):
         y = y + h * function(x, y)
         x = x + h
-        values.append((x, y))
 
-    return values
+        x_values.append(x)
+        y_values.append(y)
+
+    return x_values, y_values
 
 
 def heun(
@@ -69,22 +74,26 @@ def heun(
     list
         A function approximation.
     """
-    values = []
+    x_values, y_values = [], []
+
     h = (beta - alpha) / n
     x = alpha
     y = y0
-    values.append((x, y))
 
-    for _ in range(n):
+    x_values.append(x)
+    y_values.append(y)
+
+    for _ in range(1, n):
         y_predictor = y + h * function(x, y)
 
         y += (h / 2) * (function(x, y) + function(x + h, y_predictor))
 
         x += h
 
-        values.append((x, y))
+        x_values.append(x)
+        y_values.append(y)
 
-    return values
+    return x_values, y_values
 
 
 def rk4(
@@ -114,13 +123,16 @@ def rk4(
     list
         A function approximation.
     """
-    values = []
+    x_values, y_values = [], []
+
     h = (beta - alpha) / n
     x = alpha
     y = y0
-    values.append((x, y))
 
-    for _ in range(n):
+    x_values.append(x)
+    y_values.append(y)
+
+    for _ in range(1, n):
         k1 = function(x, y)
         k2 = function(x + h / 2, y + h * (k1 / 2))
         k3 = function(x + h / 2, y + h * (k2 / 2))
@@ -129,6 +141,7 @@ def rk4(
         y += (h / 6) * (k1 + 2 * k2 + 2 * k3 + k4)
         x += h
 
-        values.append((x, y))
+        x_values.append(x)
+        y_values.append(y)
 
-    return values
+    return x_values, y_values
