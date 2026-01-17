@@ -6,7 +6,7 @@ def euler(
     alpha: float,
     beta: float,
     y0: float,
-    n: int,
+    h: float,
 ) -> list:
     """Solve ODE initial value problem using Euler's Method.
 
@@ -20,8 +20,8 @@ def euler(
         The upper bound.
     y0 : float
         The initial value.
-    n : int
-        The number of partitions.
+    h : float
+        The step size.
 
     Returns
     -------
@@ -32,19 +32,27 @@ def euler(
     """
     x_values, y_values = [], []
 
-    h = (beta - alpha) / n
+    n = int((beta - alpha) // h)
     x = alpha
     y = y0
 
     x_values.append(x)
     y_values.append(y)
 
-    for _ in range(1, n):
+    for _ in range(1, n - 1):
         y = y + h * function(x, y)
         x = x + h
 
         x_values.append(x)
         y_values.append(y)
+
+    h_final = (beta - alpha) - n * h
+
+    y = y + h_final * function(x, y)
+    x = x + h_final
+
+    x_values.append(x)
+    y_values.append(y)
 
     return x_values, y_values
 
@@ -54,7 +62,7 @@ def heun(
     alpha: float,
     beta: float,
     y0: float,
-    n: int,
+    h: int,
 ) -> list:
     """Solve ODE initial value problem using Heun's Method.
 
@@ -68,8 +76,8 @@ def heun(
         The upper bound.
     y0 : float
         The initial value.
-    n : int
-        The number of partitions.
+    h : float
+        The step size.
 
     Returns
     -------
@@ -80,22 +88,31 @@ def heun(
     """
     x_values, y_values = [], []
 
-    h = (beta - alpha) / n
+    n = int((beta - alpha) // h)
     x = alpha
     y = y0
 
     x_values.append(x)
     y_values.append(y)
 
-    for _ in range(1, n):
+    for _ in range(1, n - 1):
         y_predictor = y + h * function(x, y)
 
         y += (h / 2) * (function(x, y) + function(x + h, y_predictor))
-
         x += h
 
         x_values.append(x)
         y_values.append(y)
+
+    h_final = (beta - alpha) - n * h
+
+    y_predictor = y + h_final * function(x, y)
+
+    y += (h_final / 2) * (function(x, y) + function(x + h_final, y_predictor))
+    x += h_final
+
+    x_values.append(x)
+    y_values.append(y)
 
     return x_values, y_values
 
@@ -105,7 +122,7 @@ def rk4(
     alpha: float,
     beta: float,
     y0: float,
-    n: int,
+    h: float,
 ) -> list:
     """Solve ODE initial value problem using Runge-Kutta 4.
 
@@ -119,8 +136,8 @@ def rk4(
         The upper bound.
     y0 : float
         The initial value.
-    n : int
-        The number of partitions.
+    h : float
+        The step size.
 
     Returns
     -------
@@ -131,14 +148,14 @@ def rk4(
     """
     x_values, y_values = [], []
 
-    h = (beta - alpha) / n
+    n = int((beta - alpha) // h)
     x = alpha
     y = y0
 
     x_values.append(x)
     y_values.append(y)
 
-    for _ in range(1, n):
+    for _ in range(1, n - 1):
         k1 = function(x, y)
         k2 = function(x + h / 2, y + h * (k1 / 2))
         k3 = function(x + h / 2, y + h * (k2 / 2))
@@ -149,5 +166,17 @@ def rk4(
 
         x_values.append(x)
         y_values.append(y)
+
+    h_final = (beta - alpha) - n * h
+    k1 = function(x, y)
+    k2 = function(x + h_final / 2, y + h_final * (k1 / 2))
+    k3 = function(x + h_final / 2, y + h_final * (k2 / 2))
+    k4 = function(x + h_final, y + h_final * k3)
+
+    y += (h_final / 6) * (k1 + 2 * k2 + 2 * k3 + k4)
+    x += h_final
+
+    x_values.append(x)
+    y_values.append(y)
 
     return x_values, y_values
