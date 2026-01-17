@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 0 2026-01-17
+
+### Changed
+
+- ```ode.py``` functions now return two lists.
+
 ## 0.3.4 - 2025-12-16
 
 ### Changed

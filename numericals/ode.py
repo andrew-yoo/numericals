@@ -25,8 +25,10 @@ def euler(
 
     Returns
     -------
-    list
-        A function approximation.
+    x_values : list
+        A list of x values at which the solution was approximated.
+    y_values : list
+        A list of solution approximations.
     """
     x_values, y_values = [], []
 
@@ -71,8 +73,10 @@ def heun(
 
     Returns
     -------
-    list
-        A function approximation.
+    x_values : list
+        A list of x values at which the solution was approximated.
+    y_values : list
+        A list of solution approximations.
     """
     x_values, y_values = [], []
 
@@ -120,8 +124,10 @@ def rk4(
 
     Returns
     -------
-    list
-        A function approximation.
+    x_values : list
+        A list of x values at which the solution was approximated.
+    y_values : list
+        A list of solution approximations.
     """
     x_values, y_values = [], []
 
