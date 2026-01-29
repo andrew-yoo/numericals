@@ -38,6 +38,11 @@ Numerical methods in pure Python.
     - Regula Falsi
     - Illinois Algorithm
 
+## Tests
+```
+python -m pytest tests
+```
+
 ## License
 
 [LGPLv2.1](LICENSE)

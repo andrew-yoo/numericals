@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 0 2026-01-17
+
+### Changed
+
+- ```ode.py``` library
+    - Functions now return two lists (for x and y values). Previously, functions returned a single list of tuples (ordered pairs).
+    - Functions now take a step size parameter instead of a partition number parameter.
+
 ## 0.3.4 - 2025-12-16
 
 ### Changed
