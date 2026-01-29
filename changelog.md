@@ -1,6 +1,14 @@
 # Changelog
 
-## 0.4.0 0 2026-01-17
+## 0.4.1 - 2026-01-29
+
+### Changed
+
+- Fixed ```ode.py``` functions (floating point errors).
+- Fixed ```test_ode.py``` tests and sped them up as well.
+- Added repository url to ```pyproject.toml```.
+
+## 0.4.0 - 2026-01-28
 
 ### Changed
 
