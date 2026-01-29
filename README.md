@@ -2,7 +2,7 @@
 
 [![PyPI version](https://badge.fury.io/py/numericals.svg)](https://badge.fury.io/py/numericals)
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/numericals?period=total&units=NONE&left_color=GRAY&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/numericals)
-[![license](https://img.shields.io/pypi/l/numericals.svg)](https://github.com/andrew-yoo/numericals/blob/main/LICENSE)
+[![License: LGPL-3.0-or-later](https://img.shields.io/badge/License-LGPL--3.0--or--later-orange.svg)](https://spdx.org/licenses/LGPL-3.0-or-later.html)   
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 

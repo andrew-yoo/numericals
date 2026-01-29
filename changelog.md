@@ -7,6 +7,9 @@
 - Fixed ```ode.py``` functions (floating point errors).
 - Fixed ```test_ode.py``` tests and sped them up as well.
 - Added repository url to ```pyproject.toml```.
+- Switched license in ```LICENSE``` file to ```LGPL-3.0-or-later``` (was previously ```LGPL-3.0-or-later```).
+    - Added copyright header to ```integrate.py```, ```ode.py```, ```optimize.py```, and ```root.py```.
+    - Updated badge in ```README.md```.
 
 ## 0.4.0 - 2026-01-28
 

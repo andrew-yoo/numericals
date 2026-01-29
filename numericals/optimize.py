@@ -1,3 +1,7 @@
+# Copyright 2026 Andrew Yoo.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+
+
 import math
 from collections.abc import Callable
 
