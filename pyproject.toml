@@ -18,5 +18,6 @@ include = ["numericals*"]
 
 [dependency-groups]
 dev = [
+    "pdoc3>=0.11.6",
     "pytest>=9.0.0",
 ]
