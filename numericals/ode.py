@@ -39,7 +39,7 @@ def euler(
     x_values.append(x)
     y_values.append(y)
 
-    for _ in range(1, n - 1):
+    for _ in range(n - 1):
         y = y + h * function(x, y)
         x = x + h
 
@@ -95,7 +95,7 @@ def heun(
     x_values.append(x)
     y_values.append(y)
 
-    for _ in range(1, n - 1):
+    for _ in range(n - 1):
         y_predictor = y + h * function(x, y)
 
         y += (h / 2) * (function(x, y) + function(x + h, y_predictor))
@@ -155,7 +155,7 @@ def rk4(
     x_values.append(x)
     y_values.append(y)
 
-    for _ in range(1, n - 1):
+    for _ in range(n - 1):
         k1 = function(x, y)
         k2 = function(x + h / 2, y + h * (k1 / 2))
         k3 = function(x + h / 2, y + h * (k2 / 2))
