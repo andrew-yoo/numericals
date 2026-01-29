@@ -1,25 +1,9 @@
----
-description: |
-    API documentation for modules: numericals, numericals.integrate, numericals.ode, numericals.optimize, numericals.root.
-
-lang: en
-
-classoption: oneside
-geometry: margin=1in
-papersize: a4
-
-linkcolor: blue
-links-as-notes: true
-...
-
-
-
 # Module `numericals` {#numericals}
 
 
 
 
-
+    
 ## Sub-modules
 
 * [numericals.integrate](#numericals.integrate)
@@ -32,7 +16,7 @@ links-as-notes: true
 
 
 
-
+    
 # Module `numericals.integrate` {#numericals.integrate}
 
 
@@ -270,7 +254,7 @@ Numerically integrate a function using the Trapezoidal Rule.
 >         alpha: float,
 >         beta: float,
 >         y0: float,
->         n: int
+>         h: float
 >     ) ‑> list
 
 
@@ -294,13 +278,17 @@ Solve ODE initial value problem using Euler's Method.
 :   The initial value.
 
 
-**```n```** :&ensp;<code>int</code>
-:   The number of partitions.
+**```h```** :&ensp;<code>float</code>
+:   The step size.
 
 ###### Returns
 
-<code>list</code>
-:   A function approximation.
+**```x_values```** :&ensp;<code>list</code>
+:   A list of x values at which the solution was approximated.
+
+
+**```y_values```** :&ensp;<code>list</code>
+:   A list of solution approximations.
 
 
 
@@ -315,7 +303,7 @@ Solve ODE initial value problem using Euler's Method.
 >         alpha: float,
 >         beta: float,
 >         y0: float,
->         n: int
+>         h: int
 >     ) ‑> list
 
 
@@ -339,13 +327,17 @@ Solve ODE initial value problem using Heun's Method.
 :   The initial value.
 
 
-**```n```** :&ensp;<code>int</code>
-:   The number of partitions.
+**```h```** :&ensp;<code>float</code>
+:   The step size.
 
 ###### Returns
 
-<code>list</code>
-:   A function approximation.
+**```x_values```** :&ensp;<code>list</code>
+:   A list of x values at which the solution was approximated.
+
+
+**```y_values```** :&ensp;<code>list</code>
+:   A list of solution approximations.
 
 
 
@@ -360,7 +352,7 @@ Solve ODE initial value problem using Heun's Method.
 >         alpha: float,
 >         beta: float,
 >         y0: float,
->         n: int
+>         h: float
 >     ) ‑> list
 
 
@@ -384,13 +376,17 @@ Solve ODE initial value problem using Runge-Kutta 4.
 :   The initial value.
 
 
-**```n```** :&ensp;<code>int</code>
-:   The number of partitions.
+**```h```** :&ensp;<code>float</code>
+:   The step size.
 
 ###### Returns
 
-<code>list</code>
-:   A function approximation.
+**```x_values```** :&ensp;<code>list</code>
+:   A list of x values at which the solution was approximated.
+
+
+**```y_values```** :&ensp;<code>list</code>
+:   A list of solution approximations.
 
 
 
