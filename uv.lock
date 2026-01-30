@@ -98,19 +98,18 @@ name = "numericals"
 version = "0.4.1"
 source = { editable = "." }
 
-[package.dev-dependencies]
+[package.optional-dependencies]
 dev = [
     { name = "pdoc3" },
     { name = "pytest" },
 ]
 
 [package.metadata]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pdoc3", specifier = ">=0.11.6" },
-    { name = "pytest", specifier = ">=9.0.0" },
+requires-dist = [
+    { name = "pdoc3", marker = "extra == 'dev'", specifier = ">=0.11.6" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=9.0.0" },
 ]
+provides-extras = ["dev"]
 
 [[package]]
 name = "packaging"
