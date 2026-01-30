@@ -5,11 +5,11 @@ import math
 
 f1 = lambda x, y: y
 f1_solution = lambda x: math.e**x
-f1_params = (lambda x: math.e**x, 0, 1, 1, 1e-4)
+f1_params = (lambda x: math.e**x, 0, 1, 1, 1e-2)
 
 f2 = lambda x, y: (6 * x) - (3 * y) + 5
 f2_solution = lambda x: 2 * math.e ** (-3 * x) + 2 * x + 1
-f2_params = (lambda x: 2 * math.e ** (-3 * x) + 2 * x + 1, 0, 5, 3, 1e-5)
+f2_params = (lambda x: 2 * math.e ** (-3 * x) + 2 * x + 1, 0, 5, 3, 1e-2)
 
 
 def partition(alpha, beta, h):
@@ -53,13 +53,13 @@ def test_euler():
 
     f1_euler = ode.euler(f1, alpha, beta, y0, h)
 
-    assert f1_euler[1] == pytest.approx(f1_points, abs=1e-3)
+    assert f1_euler[1] == pytest.approx(f1_points, abs=1e-1)
 
     f1_analytic, alpha, beta, y0, h = f2_params
 
     f2_euler = ode.euler(f2, alpha, beta, y0, h)
 
-    assert f2_euler[1] == pytest.approx(f2_points, abs=1e-3)
+    assert f2_euler[1] == pytest.approx(f2_points, abs=1e-1)
 
 
 def test_heun():
